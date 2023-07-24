@@ -4,18 +4,257 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-		.left
+		@keyframes blink
 		{
-			background-color: aqua;
-			width: 100vw;
+			0%{
+				opacity: 1;
+			}
+			50%{
+				opacity: 0;
+			}
+			100%{
+				opacity: 1;
+			}
+		}
+		.blink
+		{
+			animation: blink;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		}
+		.blue
+		{
+			color: #458588 !important;
+		}
+		body
+		{
+			font-family: Arial, Helvetica, sans-serif;
 			height: 100vh;
+			width: 100vw;
+			display: flex;
+			background-image: url("https://preview.redd.it/gruvbox-abstract-shapes-7680x4320-v0-p2oydeg58dca1.png?auto=webp&s=2061912ec69c79c4397385e8a0443739092e00f0");
+			justify-content: space-around;
+			align-items: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.topBar
+		{
+			height:5vh;
+			background-color: black;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.circles
+		{
+			display: flex;
+			align-items: center;
+		}
+		.terminal
+		{
+			width: 45vw;
+			height: 90vh;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+		}
+		.tBody
+		{
+			width: 80vw;
+			height: 85vh;
+			backdrop-filter: blur(8px);
+			z-index: 3;
+			padding: 10px;
+		}
+		p
+		{
+			margin: 0;
+			padding: 0;
+			color: white;
+		}
+		.hostname
+		{
+			color: #98971a;
+			font-weight: 900;
+			margin-right: 20px;
+		}
+		#endInp
+		{
+			width: 10px;
+		}
+		.dot
+		{
+			width: 1vw;
+			height: 1vw;
+			border-radius: 50%;
+			background-color: aqua;
+			margin: 7px;
+		}
+		.titleBar
+		{
+			color: aliceblue;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+		.line
+		{
+			display: flex;
+			align-items: center;
+		}
+		a
+		{
+			color: white;
+		}
+		.profile
+		{
+			width: 30vw;
+			height: 30vh;
+			overflow: hidden;
+		}
+		.profile img
+		{
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		span
+		{
+			color: white;
+		}
+		input
+		{
+			min-width: 10px;
+			outline: none;
+			background-color: transparent;
+			border: none;
+			font-size: 15px;
+			color: white;
+		}
+		.val
+		{
+			color: #83a598;
+		}
+		.key
+		{
+			color: #83c07c !important;
+		}
+		::placeholder
+		{
+			color: white;
 		}
 	</style>
 	<title>Document</title>
 </head>
 <body>
-	<div class="left">
-
+	<div class="terminal">
+		<div class="topBar">
+			<div class="circles">
+				<div class="dot" style="background-color: crimson;"></div>
+				<div class="dot" style="background-color: yellow;"></div>
+				<div class="dot" style="background-color: green;"></div>
+			</div>
+			<div class="titleBar">Personal Info</div>
+		</div>
+		<div class="tBody">
+			<div class="line">
+				<p class="hostname">MarcoPaternostoFrosi@profile >></p><p>profile --help</p>
+			</div>
+			<div class="line">
+				<p>try to insert: cat curriculum.json</p>
+			</div>
+			<div class="line">
+				<p class="hostname">MarcoPaternostoFrosi@profile >></p><input type="text" name="" id="showCv">
+			</div>
+			<div class="line cv" style="display: none;">
+				<p>{<br>
+					&emsp;&emsp;<span class="key">Name: </span><span class="val">"Marco"</span>,<br>
+					&emsp;&emsp;<span class="key">Surname:</span> <span class="val">"Paternosto Frosi"</span>,<br>
+					&emsp;&emsp;<span class="key">location:</span> <span class="val">"Rome / Italy"</span>,<br>
+					&emsp;&emsp;<span class="key">Phone:</span> <span class="val">"+39 3455881205"</span>,<br>
+					&emsp;&emsp;<span class="key">Email:</span> <span class="val">"marco.paternosto@outlook.it"</span>,<br>
+					&emsp;&emsp;<span class="key">Studies:</span> <span class="val">"42 Coding School"</span>,<br>
+					&emsp;&emsp;<span class="key">Know_Programming_Language:</span> {<br>
+					&emsp;&emsp;&emsp;&emsp;<span class="key">Low_Level:</span> <span class="val">"C / C++"</span>,<br>
+					&emsp;&emsp;&emsp;&emsp;<span class="key">Web_development:</span> <span class="val">"html / css / Javascript / Typescript / Angular"</span>,<br>
+					&emsp;&emsp;&emsp;&emsp;<span class="key">Scripting:</span> <span class="val">"Bash"</span><br>
+					&emsp;&emsp;}<br>
+					&emsp;&emsp;<span class="key">GitHub_Repo:</span> <a href="https://github.com/marcopf/marcopf"><span class="val">"https://github.com/marcopf/marcopf"</a></span>,
+					<br>}</p>
+			</div>
+			<div class="line newLine" style="display: none;">
+				<p class="hostname">MarcoPaternostoFrosi@profile >></p><p>you can proceed on right side!</p>
+			</div>
+		</div>
 	</div>
+	<div class="terminal">
+		<div class="topBar">
+			<div class="circles">
+				<div class="dot" style="background-color: crimson;"></div>
+				<div class="dot" style="background-color: yellow;"></div>
+				<div class="dot" style="background-color: green;"></div>
+			</div>
+			<div class="titleBar">Photo</div>
+		</div>
+		<div class="tBody">
+			<div class="line">
+				<p class="hostname">MarcoPaternostoFrosi@profile >></p><p>ls</p>
+			</div>
+			<div class="line">
+				&emsp;<p class="blue">profile_picture.jpg</p>
+			</div>
+			<div class="line">
+				<p class="hostname">MarcoPaternostoFrosi@profile >></p><p>profile --help</p>
+			</div>
+			<div class="line">
+				&emsp;<p>try typing show profile</p>
+			</div>
+			<div class="line">
+				<p class="hostname">MarcoPaternostoFrosi@profile >></p><input type="text" name="" id="showImg">
+			</div>
+			<div class="line">
+				<div class="profile" style="display: none;">
+					<img src="https://i.ibb.co/16GchrD/IMG-1856.jpg" alt="">
+				</div>
+			</div>
+			<div class="line ending" style="display: none;">
+				<p class="hostname">MarcoPaternostoFrosi@profile >></p><p>thank you for your time!!</p><input type="text" name="" id="endInp">
+			</div>
+		</div>
+	</div>
+	<script>
+		let photo = document.querySelector(".profile");
+		let cv = document.querySelector(".cv");
+		let nl = document.querySelector(".newLine");
+		let el = document.querySelector(".ending");
+		let inp = document.querySelector("#showImg");
+		let endInp = document.querySelector("#endInp");
+		let inpCv = document.querySelector("#showCv");
+		inpCv.focus()
+		inpCv.addEventListener("keyup", (event)=>{
+
+			if (inpCv.value == "cat curriculum.json" && event.key == "Enter")
+			{
+				cv.style.display = "flex";
+				nl.style.display = "flex";
+				inp.focus()
+			}
+			else
+				cv.style.display = "none";
+		})
+		inp.addEventListener("keyup", (event)=>{
+			if (inp.value == "show profile" && event.key == "Enter")
+			{
+				photo.style.display = "flex";
+				el.style.display = "flex";
+				endInp.focus();
+			}
+			else
+			{
+				photo.style.display = "none"
+			}
+		})
+	</script>
 </body>
 </html>
